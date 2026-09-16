@@ -235,3 +235,93 @@
     margin-top: 12px;
   }
 }
+
+.masthead__brands {
+  display: none;
+}
+
+.masthead__venue {
+  font-size: 0;
+  line-height: 1;
+}
+
+.masthead__venue::after {
+  content: "TU ENCUENTRO\A RESUELTO";
+  display: block;
+  white-space: pre-line;
+  color: #fff;
+  font-size: clamp(17px, 1.35vw, 26px);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+
+.masthead__reservation {
+  font-size: clamp(17px, 1.35vw, 26px);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+
+.title-lockup {
+  top: 48.5%;
+  left: 50%;
+  right: auto;
+  display: block;
+  width: min(1500px, calc(100vw - 80px));
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.title-word--sushi {
+  display: block;
+  margin: 0;
+  font-size: 0;
+}
+
+.title-word--sushi::after {
+  content: "EVENTOS & CATERING";
+  display: block;
+  color: #fff;
+  font-family: "Gazzetta", sans-serif;
+  font-size: clamp(84px, 8.6vw, 166px);
+  font-weight: 800;
+  line-height: 0.82;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 3px rgba(255, 255, 255, 0.6),
+    0 0 18px rgba(255, 255, 255, 0.16);
+}
+
+.title-kicker,
+.title-word--libre {
+  display: none;
+}
+
+.hero-copy {
+  top: 68%;
+}
+
+@media (max-width: 720px) {
+  .masthead__venue::after,
+  .masthead__reservation {
+    font-size: clamp(12px, 3.4vw, 16px);
+  }
+
+  .title-lockup {
+    top: 45%;
+    width: calc(100vw - 32px);
+    white-space: normal;
+  }
+
+  .title-word--sushi::after {
+    font-size: clamp(58px, 16vw, 92px);
+    line-height: 0.84;
+  }
+
+  .hero-copy {
+    top: auto;
+  }
+}
