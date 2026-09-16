@@ -183,3 +183,15 @@
     overflow-wrap: anywhere;
   }
 }
+
+@media (max-width: 380px) {
+  .events-card h3 {
+    font-size: 34px;
+    line-height: 0.9;
+  }
+
+  .events-product h3 {
+    font-size: 40px;
+    line-height: 0.86;
+  }
+}
