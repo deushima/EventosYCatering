@@ -214,7 +214,7 @@ const renderEventsLanding = () => [
   '        <section class="events-product menu-reveal menu-reveal--group" data-menu-reveal aria-labelledby="events-product-title">',
   '          <div>',
   '            <p class="events-section__eyebrow">Pensado para compartir</p>',
-  '            <h3 id="events-product-title">CALIDAD, VARIEDAD Y PRESENTACIÓN</h3>',
+  '            <h3 id="events-product-title">CALIDAD VARIEDAD Y PRESENTACIÓN</h3>',
   '          </div>',
   '          <p>Para que vos te ocupes de disfrutar.</p>',
   `          <a class="events-product__action" href="${CONTACT_URL}" target="_blank" rel="noopener noreferrer">CONSULTÁ AHORA</a>`,
