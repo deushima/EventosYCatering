@@ -4,6 +4,10 @@
   --orange-light: #EEAD63;
 }
 
+.masthead__sushiclub {
+  filter: brightness(0) invert(1);
+}
+
 .events-section__background {
   position: sticky;
   z-index: 0;
