@@ -1,0 +1,23 @@
+:root {
+  --orange: #EEAD63;
+  --orange-rgb: 238, 173, 99;
+  --orange-light: #EEAD63;
+}
+
+.events-section__background::before {
+  background:
+    linear-gradient(
+      180deg,
+      #000 0%,
+      rgba(0, 0, 0, 0.9) 16%,
+      rgba(238, 173, 99, 0.16) 46%,
+      rgba(0, 0, 0, 0.92) 78%,
+      #000 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.88),
+      rgba(0, 0, 0, 0.38),
+      rgba(0, 0, 0, 0.88)
+    );
+}
