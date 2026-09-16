@@ -192,7 +192,7 @@ const renderEventsLanding = () => [
   '      <div class="events-section__shell">',
   '        <header class="events-section__intro menu-reveal menu-reveal--intro" data-menu-reveal>',
   '          <p class="events-section__eyebrow">Eventos & Catering</p>',
-  '          <h2 id="events-heading">PARA CADA OCASIÓN ESPECIAL</h2>',
+  '          <h2 id="events-heading">PARA CADA MOMENTO ESPECIAL</h2>',
   '        </header>',
   '        <div class="events-section__occasions" aria-label="Tipos de ocasión">',
   '          <article class="events-card menu-reveal menu-reveal--item" data-menu-reveal style="--menu-reveal-delay:0ms">',
