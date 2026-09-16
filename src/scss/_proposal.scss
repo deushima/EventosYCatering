@@ -1,0 +1,348 @@
+.proposal {
+  position: relative;
+  padding: clamp(48px, 6vh, 76px) 0 clamp(48px, 6vh, 76px);
+  overflow: hidden;
+  background: #000;
+  color: var(--white);
+}
+
+.proposal__shell {
+  width: min(1500px, calc(100% - clamp(48px, 6vw, 128px)));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(430px, 1fr);
+  column-gap: clamp(56px, 9vw, 164px);
+}
+
+.proposal__header {
+  grid-column: 1;
+
+  h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(48px, 4.25vw, 78px);
+    font-weight: 500;
+    line-height: 0.94;
+    letter-spacing: -0.065em;
+    text-transform: uppercase;
+  }
+}
+
+.proposal__content {
+  grid-column: 2;
+  min-width: 0;
+}
+
+.proposal__intro {
+  max-width: 30ch;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(25px, 2vw, 38px);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.052em;
+  text-transform: uppercase;
+}
+
+.proposal__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin: clamp(18px, 3.4vh, 26px) 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 30px;
+    padding: 5px 13px 4px;
+    border: 1px solid rgba(255, 255, 255, 0.84);
+    border-radius: 999px;
+    color: #fff;
+    font-size: clamp(10px, 0.72vw, 13px);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+
+.proposal__prices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 4vw, 64px);
+  margin-top: clamp(48px, 6vh, 68px);
+}
+
+.proposal__price,
+.proposal__condition {
+  min-width: 0;
+}
+
+.proposal__eyebrow,
+.proposal__condition h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(11px, 0.76vw, 14px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.proposal__amount {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 10px 0 0;
+  color: #fff;
+  font-size: clamp(46px, 3.7vw, 68px);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.072em;
+  white-space: nowrap;
+
+  span {
+    font-size: 0.52em;
+    letter-spacing: -0.04em;
+  }
+}
+
+.proposal__price--benefit {
+  .proposal__eyebrow {
+    font-size: clamp(12px, 0.82vw, 15px);
+    font-weight: 700;
+  }
+
+  .proposal__amount {
+    font-size: clamp(52px, 4.1vw, 76px);
+  }
+}
+
+.proposal__payment-logo {
+  display: block;
+  width: 290px;
+  max-width: 100%;
+  height: auto;
+  margin-top: 18px;
+  aspect-ratio: 245 / 32;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.proposal__conditions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(36px, 5vw, 76px);
+  margin-top: clamp(72px, 10vh, 72px);
+}
+
+.proposal__condition {
+  h3 {
+    font-weight: 700;
+  }
+
+  p {
+    max-width: 29ch;
+    margin: 16px 0 0;
+    color: #fff;
+    font-size: clamp(13px, 0.9vw, 16px);
+    font-weight: 400;
+    line-height: 1.16;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+.proposal__legal {
+  max-width: 78ch;
+  margin: clamp(42px, 5vh, 64px) 0 0;
+  color: rgba(255, 255, 255, 0.56);
+  font-size: clamp(8px, 0.55vw, 10px);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+
+.proposal + .menu-section .menu-section__shell {
+  padding-top: clamp(72px, 9vh, 108px);
+}
+
+@media (max-width: 1100px) {
+  .proposal {
+    padding-top: clamp(66px, 8vh, 90px);
+  }
+
+  .proposal__header h2 {
+    font-size: clamp(42px, 5.4vw, 62px);
+  }
+
+  .proposal__intro {
+    max-width: 27ch;
+    font-size: clamp(24px, 2.9vw, 33px);
+  }
+
+  .proposal__prices {
+    gap: 30px;
+  }
+
+  .proposal__conditions {
+    gap: 30px;
+    margin-top: clamp(62px, 8vh, 88px);
+  }
+}
+
+@media (max-width: 980px) {
+  .proposal__shell {
+    width: calc(100% - 48px);
+    grid-template-columns: minmax(220px, 0.78fr) minmax(360px, 1fr);
+    column-gap: clamp(36px, 6vw, 72px);
+  }
+
+  .proposal__payment-logo {
+    width: 280px;
+  }
+}
+
+@media (max-width: 720px) {
+  .proposal {
+    padding: 68px 0 calc(var(--dock-height) + 64px);
+  }
+
+  .proposal__shell {
+    width: calc(100% - 40px);
+    display: block;
+  }
+
+  .proposal__header h2 {
+    font-size: clamp(40px, 8.4vw, 64px);
+  }
+
+  .proposal__content {
+    margin-top: clamp(42px, 6vh, 58px);
+  }
+
+  .proposal__intro {
+    max-width: 30ch;
+    font-size: clamp(23px, 4.2vw, 32px);
+  }
+
+  .proposal__chips {
+    margin-top: 28px;
+  }
+
+  .proposal__prices {
+    margin-top: 48px;
+  }
+
+  .proposal__conditions {
+    margin-top: 64px;
+  }
+
+  .proposal + .menu-section .menu-section__shell {
+    padding-top: 76px;
+  }
+}
+
+@media (max-width: 620px) {
+  .proposal {
+    padding: 62px 0 calc(var(--dock-height) - 100px);
+  }
+
+  .proposal__shell {
+    width: calc(100% - 32px);
+  }
+
+  .proposal__header h2 {
+    font-size: clamp(38px, 12vw, 52px);
+    line-height: 0.92;
+  }
+
+  .proposal__content {
+    margin-top: 34px;
+  }
+
+  .proposal__intro {
+    max-width: none;
+    font-size: clamp(22px, 5.5vw, 28px);
+    line-height: 1.06;
+    letter-spacing: -0.045em;
+  }
+
+  .proposal__chips {
+    gap: 8px;
+    margin-top: 24px;
+
+    li {
+      min-height: 26px;
+      padding: 5px 10px 4px;
+      font-size: 11px;
+    }
+  }
+
+  .proposal__prices,
+  .proposal__conditions {
+    grid-template-columns: 1fr;
+  }
+
+  .proposal__prices {
+    gap: 42px;
+    margin-top: 42px;
+  }
+
+  .proposal__eyebrow,
+  .proposal__condition h3 {
+    font-size: 11px;
+  }
+
+  .proposal__amount {
+    margin-top: 9px;
+    font-size: clamp(52px, 13.2vw, 62px);
+  }
+
+  .proposal__price--benefit {
+    .proposal__eyebrow {
+      font-size: 12px;
+    }
+
+    .proposal__amount {
+      font-size: clamp(58px, 15vw, 70px);
+    }
+  }
+
+  .proposal__payment-logo {
+    width: 305px;
+    margin-top: 16px;
+  }
+
+  .proposal__conditions {
+    gap: 36px;
+    margin-top: 58px;
+  }
+
+  .proposal__condition p {
+    max-width: 34ch;
+    margin-top: 13px;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .proposal__legal {
+    max-width: none;
+    margin-top: 40px;
+    font-size: 9px;
+    line-height: 1.4;
+  }
+
+  .proposal + .menu-section .menu-section__shell {
+    padding-top: 64px;
+  }
+}

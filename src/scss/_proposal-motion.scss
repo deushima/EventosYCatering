@@ -1,0 +1,96 @@
+html.has-proposal-reveal .proposal-reveal {
+  --proposal-reveal-distance: 14px;
+  --proposal-reveal-duration: 460ms;
+  opacity: 0;
+  transform: translate3d(0, var(--proposal-reveal-distance), 0);
+}
+
+html.has-proposal-reveal .proposal-reveal--heading {
+  --proposal-reveal-distance: 20px;
+  --proposal-reveal-duration: 560ms;
+}
+
+html.has-proposal-reveal .proposal-reveal--intro {
+  --proposal-reveal-distance: 18px;
+  --proposal-reveal-duration: 520ms;
+}
+
+html.has-proposal-reveal .proposal-reveal--chips {
+  --proposal-reveal-distance: 10px;
+  --proposal-reveal-duration: 400ms;
+}
+
+html.has-proposal-reveal .proposal-reveal--prices {
+  --proposal-reveal-distance: 0px;
+  --proposal-reveal-duration: 480ms;
+  transform: none;
+}
+
+html.has-proposal-reveal .proposal-reveal--conditions {
+  --proposal-reveal-distance: 12px;
+  --proposal-reveal-duration: 440ms;
+}
+
+html.has-proposal-reveal .proposal-reveal--legal {
+  --proposal-reveal-distance: 0px;
+  --proposal-reveal-duration: 320ms;
+}
+
+html.has-proposal-reveal .proposal-reveal.is-visible {
+  animation: proposal-reveal-in var(--proposal-reveal-duration) var(--ease-out) var(--proposal-reveal-delay, 0ms) both;
+}
+
+html.has-proposal-reveal .proposal-reveal--prices.is-visible {
+  animation-name: proposal-reveal-fade;
+}
+
+html.has-proposal-reveal .proposal-reveal.is-visible.is-reveal-bypassed {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+html.has-proposal-reveal.proposal-reveal-fallback .proposal-reveal {
+  opacity: 1;
+  transform: none;
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.has-proposal-reveal .proposal-reveal {
+    --proposal-reveal-distance: 0px;
+    --proposal-reveal-duration: 160ms;
+    --proposal-reveal-delay: 0ms !important;
+  }
+
+  html.has-proposal-reveal .proposal-reveal.is-visible {
+    animation-name: proposal-reveal-fade;
+    animation-timing-function: linear;
+  }
+
+  html.has-proposal-reveal .proposal-reveal.is-visible.is-reveal-bypassed {
+    animation: none;
+  }
+}
+
+@keyframes proposal-reveal-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, var(--proposal-reveal-distance), 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes proposal-reveal-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

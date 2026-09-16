@@ -1,0 +1,238 @@
+html.has-menu-reveal .menu-reveal {
+  --menu-reveal-distance: 12px;
+  --menu-reveal-duration: 440ms;
+  opacity: 0;
+  transform: translate3d(0, var(--menu-reveal-distance), 0);
+}
+
+html.has-menu-reveal .menu-reveal--intro {
+  --menu-reveal-distance: 18px;
+  --menu-reveal-duration: 520ms;
+}
+
+html.has-menu-reveal .menu-reveal--group {
+  --menu-reveal-distance: 14px;
+  --menu-reveal-duration: 480ms;
+}
+
+html.has-menu-reveal .menu-reveal--item {
+  --menu-reveal-distance: 12px;
+  --menu-reveal-duration: 440ms;
+}
+
+html.has-menu-reveal .menu-reveal.is-visible {
+  animation: menu-reveal-in var(--menu-reveal-duration) var(--ease-out) var(--menu-reveal-delay, 0ms) both;
+}
+
+html.has-menu-reveal.menu-reveal-fallback .menu-reveal {
+  opacity: 1;
+  transform: none;
+  animation: none !important;
+}
+
+.hero__black-filter {
+  --stage-overlay-opacity: 0.66;
+  opacity: var(--stage-overlay-opacity);
+}
+
+.hero__gradient {
+  --stage-overlay-opacity: 0.52;
+  opacity: var(--stage-overlay-opacity);
+}
+
+// La intro corta directamente al primer frame del loop. El crossfade sólo existe
+// entre las dos capas de bg_loop.webm una vez que la intro dejó de estar activa.
+.hero__video-stack:has(.hero__video[data-intro-video].is-active)
+  .hero__video[data-loop-video] {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .booking-dock__cta::before {
+    animation: cta-sheen 8.8s ease-in-out 1.5s infinite;
+  }
+
+  .hero__video-stack {
+    animation: video-settle 850ms var(--ease-soft) both;
+  }
+
+  .hero__black-filter,
+  .hero__gradient {
+    animation: stage-overlay-in 300ms ease-out 1500ms both;
+  }
+
+  .title-word--sushi {
+    animation: stage-title-in 520ms var(--ease-out) 1800ms both;
+  }
+
+  .title-word--libre {
+    animation: stage-title-in 540ms var(--ease-out) 1850ms both;
+  }
+
+  .title-kicker {
+    animation: stage-copy-in 380ms var(--ease-out) 2020ms both;
+  }
+
+  .hero-copy {
+    animation: stage-copy-centered-in 440ms var(--ease-out) 2150ms both;
+  }
+
+  .booking-dock {
+    animation: stage-dock-in 460ms var(--ease-out) 2390ms both;
+  }
+
+  .masthead {
+    animation: stage-masthead-in 400ms var(--ease-out) 2660ms both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.has-menu-reveal .menu-reveal {
+    --menu-reveal-distance: 0px;
+    --menu-reveal-duration: 140ms;
+  }
+
+  html.has-menu-reveal .menu-reveal.is-visible {
+    animation-name: menu-reveal-fade;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes menu-reveal-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, var(--menu-reveal-distance), 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes menu-reveal-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes video-settle {
+  from {
+    opacity: 0.84;
+    scale: 1.025;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes stage-overlay-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: var(--stage-overlay-opacity, 1);
+  }
+}
+
+@keyframes stage-title-in {
+  from {
+    opacity: 0;
+    translate: 0 15px;
+    filter: blur(var(--title-intro-blur, 5px));
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+    filter: blur(0);
+  }
+}
+
+@keyframes stage-copy-in {
+  from {
+    opacity: 0;
+    translate: 0 9px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes stage-copy-centered-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes stage-dock-in {
+  from {
+    opacity: 0;
+    translate: 0 15px;
+    scale: 0.985;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
+@keyframes stage-masthead-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes quiet-fade {
+  from {
+    opacity: 0.82;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes cta-sheen {
+  0%,
+  10% {
+    left: -104%;
+    opacity: 0;
+  }
+
+  16% {
+    opacity: 0.82;
+  }
+
+  34% {
+    left: 152%;
+    opacity: 0.58;
+  }
+
+  42%,
+  100% {
+    left: 152%;
+    opacity: 0;
+  }
+}

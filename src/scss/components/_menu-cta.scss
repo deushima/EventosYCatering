@@ -1,0 +1,204 @@
+.menu-item__view {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.28);
+  color: #fff;
+  line-height: 0;
+  vertical-align: middle;
+
+  img {
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    opacity: 0.9;
+    transition: filter 140ms ease-out, opacity 140ms ease-out;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: #fff;
+    background: #fff;
+    color: #000;
+
+    img {
+      opacity: 1;
+      filter: brightness(0);
+    }
+  }
+}
+
+.menu-final-cta {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: clamp(36px, 6vw, 96px);
+  margin-top: clamp(6vh, 10vh, 14vh);
+  margin-bottom: clamp(72px, 9vh, 118px);
+  padding: clamp(48px, 6vw, 92px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  background:
+    linear-gradient(135deg, rgba(var(--orange-rgb), 0.16), transparent 42%),
+    rgba(4, 4, 4, 0.76);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(18px) saturate(116%);
+  -webkit-backdrop-filter: blur(18px) saturate(116%);
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: min(420px, 44vw);
+    aspect-ratio: 1;
+    right: -14%;
+    bottom: -78%;
+    border-radius: 50%;
+    background: rgba(var(--orange-rgb), 0.24);
+    filter: blur(80px);
+    pointer-events: none;
+  }
+}
+
+.menu-final-cta__copy,
+.menu-final-cta__action {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-final-cta__eyebrow {
+  margin: 0 0 clamp(14px, 1.4vw, 22px);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(10px, 0.72vw, 13px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.menu-final-cta__title {
+  margin: 0;
+  color: #fff;
+  font-family: "Gazzetta", sans-serif;
+  font-size: clamp(70px, 7.2vw, 132px);
+  font-weight: 800;
+  line-height: 0.78;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 3px rgba(255, 255, 255, 0.5),
+    0 0 16px rgba(255, 255, 255, 0.11);
+}
+
+.menu-final-cta__text {
+  max-width: 42ch;
+  margin: clamp(22px, 2.5vw, 34px) 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(16px, 1.25vw, 22px);
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+
+.menu-final-cta__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(200px, 15vw, 250px);
+  min-height: clamp(84px, 7.2vw, 116px);
+  padding: 18px 24px;
+  border-radius: 8px;
+  background: var(--orange);
+  color: #fff;
+  font-size: clamp(15px, 1.05vw, 19px);
+  font-weight: 700;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: transform 180ms ease-out, filter 180ms ease-out, box-shadow 220ms ease-out;
+
+  &:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 14px 40px rgba(var(--orange-rgb), 0.28);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 4px;
+  }
+
+  &:active {
+    transform: scale(0.975);
+  }
+}
+
+@media (max-width: 900px) {
+  .menu-final-cta {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 34px;
+    padding: clamp(42px, 7vw, 66px);
+  }
+
+  .menu-final-cta__action {
+    width: min(100%, 300px);
+    min-height: 78px;
+  }
+}
+
+@media (max-width: 620px) {
+  .menu-item__view {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    min-height: 28px;
+    padding: 4px;
+
+    img {
+      width: 17px;
+      height: 17px;
+    }
+  }
+
+  .menu-final-cta {
+    gap: 28px;
+    margin-top: 9vh;
+    margin-bottom: 88px;
+    padding: 36px 28px 30px;
+    border-radius: 12px;
+  }
+
+  .menu-final-cta__eyebrow {
+    margin-bottom: 14px;
+    font-size: 10px;
+  }
+
+  .menu-final-cta__title {
+    font-size: clamp(58px, 18vw, 84px);
+    line-height: 0.8;
+  }
+
+  .menu-final-cta__text {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.18;
+  }
+
+  .menu-final-cta__action {
+    width: 100%;
+    min-height: 72px;
+    font-size: 16px;
+  }
+}

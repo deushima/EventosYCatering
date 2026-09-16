@@ -1,0 +1,68 @@
+.menu-section {
+  --menu-background-image: url("assets/menu_bg.webp");
+}
+
+.menu-item__description,
+.piece-viewer[data-state="error"] .piece-viewer__status-text {
+  color: var(--orange-light);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .booking-dock__cta:hover {
+    filter: brightness(1.06);
+  }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .booking-dock {
+    background: rgba(9, 7, 6, 0.95);
+  }
+}
+
+html.is-firefox {
+  .booking-dock {
+    background: rgba(9, 7, 6, 0.95);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .hero__grain,
+  .menu-section__background::after {
+    display: none;
+  }
+
+  .menu-section__background {
+    contain: paint;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__video {
+    transition-duration: 240ms;
+  }
+
+  .booking-dock__cta::before {
+    display: none;
+  }
+
+  .hero__video-stack,
+  .hero__black-filter,
+  .hero__gradient,
+  .title-word,
+  .title-kicker,
+  .hero-copy,
+  .booking-dock,
+  .masthead {
+    animation: quiet-fade 220ms ease-out both;
+  }
+
+  .menu-group__heading,
+  .menu-group__heading::before {
+    transition-duration: 100ms;
+  }
+
+  .menu-group__heading.is-leaving,
+  .menu-group.is-active .menu-group__heading.is-leaving {
+    transform: translate3d(0, -2px, 0);
+  }
+}

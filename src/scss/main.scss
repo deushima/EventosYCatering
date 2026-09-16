@@ -1,0 +1,20 @@
+@use "settings";
+@use "base";
+@use "components/countdown";
+@use "components/booking-button";
+@use "components/chips";
+@use "components/piece-viewer";
+@use "components/menu-cta";
+@use "motion";
+@use "proposal";
+@use "proposal-motion";
+
+// Herencia responsive: desktop define la base, tablet la modifica y mobile cierra la cascada.
+@use "breakpoints/desktop";
+@use "breakpoints/tablet";
+@use "breakpoints/mobile";
+
+// La familia display se declara y aplica después de los breakpoints para conservar sus métricas finales.
+@use "fonts";
+@use "environment";
+@use "events";

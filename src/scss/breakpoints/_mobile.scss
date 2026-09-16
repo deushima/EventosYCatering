@@ -1,0 +1,341 @@
+.booking-dock__value--mobile {
+  display: none;
+}
+
+@media (max-width: 840px) {
+  :root {
+    --dock-height: 174px;
+    --dock-bottom: max(14px, env(safe-area-inset-bottom, 0px));
+  }
+
+  html.event-live {
+    --dock-height: 64px;
+  }
+
+  .booking-dock {
+    position: fixed;
+    top: auto;
+    right: max(12px, env(safe-area-inset-right, 0px));
+    bottom: var(--dock-bottom);
+    left: max(12px, env(safe-area-inset-left, 0px));
+    width: auto;
+    max-width: 680px;
+    margin: 0 auto;
+    grid-template-columns: max-content max-content max-content minmax(0, 1fr) var(--dock-cta-track, 96px);
+    grid-template-rows: 48px 96px;
+    column-gap: 12px;
+    row-gap: 8px;
+    padding: 8px;
+  }
+
+  .booking-dock.is-event-live {
+    grid-template-rows: 48px;
+  }
+
+  .booking-dock__value--desktop {
+    display: none;
+  }
+
+  .booking-dock__value--mobile {
+    display: inline;
+  }
+
+  .booking-dock__meta {
+    width: max-content;
+    max-width: 100%;
+    min-width: 0;
+    padding: 0 4px;
+    justify-self: start;
+
+    strong {
+      display: block;
+      max-width: 100%;
+      overflow: hidden;
+      font-size: 12px;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .booking-dock__meta--location,
+  .booking-dock__meta--location + .booking-dock__meta,
+  .booking-dock__meta--time {
+    justify-self: start;
+  }
+
+  .booking-dock__label {
+    margin-bottom: 4px;
+    font-size: 9px;
+  }
+
+  .countdown {
+    grid-column: 1 / span 4;
+    grid-row: 2;
+    gap: 6px;
+  }
+
+  .booking-dock__cta {
+    grid-column: 5;
+    grid-row: 1 / span 2;
+    font-size: 14px;
+  }
+
+  .booking-dock.is-event-live .booking-dock__cta {
+    grid-row: 1;
+  }
+
+  .countdown__unit {
+    strong {
+      font-size: 27px;
+    }
+
+    span {
+      margin-top: 7px;
+      font-size: 9px;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .menu-section__background {
+    background-position: 58% center;
+
+    &::before {
+      background:
+        linear-gradient(
+          180deg,
+          #000 0%,
+          #000 7%,
+          rgba(0, 0, 0, 0.98) 15%,
+          rgba(0, 0, 0, 0.86) 28%,
+          rgba(0, 0, 0, 0.58) 43%,
+          rgba(0, 0, 0, 0.18) 58%
+        ),
+        rgba(0, 0, 0, 0.68);
+    }
+  }
+
+  .menu-section__shell {
+    width: calc(100% - 32px);
+    padding-top: 17vh;
+    padding-bottom: calc(var(--dock-height) + 0vh);
+  }
+
+  .menu-section__intro {
+    h2 {
+      font-size: clamp(38px, 12vw, 54px);
+    }
+  }
+
+  .menu-group {
+    display: block;
+    min-height: auto;
+    padding: 8vh 0;
+
+    + .menu-group {
+      margin-top: -5vh;
+    }
+
+    &.is-active .menu-group__heading {
+      opacity: 1;
+      transform: translate3d(0, var(--menu-heading-exit-offset, 0%), 0);
+    }
+  }
+
+  .menu-group__heading {
+    --menu-heading-exit-offset: 0%;
+
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    isolation: isolate;
+    padding: 16px 0 22px;
+    background: transparent;
+    visibility: visible;
+    opacity: 1;
+    transform: translate3d(0, var(--menu-heading-exit-offset), 0);
+    pointer-events: none;
+    will-change: transform;
+    transition: opacity 150ms ease-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: -16px;
+      bottom: -34px;
+      left: -16px;
+      opacity: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.97) 0%,
+        rgba(0, 0, 0, 0.93) 48%,
+        rgba(0, 0, 0, 0.72) 68%,
+        rgba(0, 0, 0, 0.34) 84%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      transition: opacity 170ms ease-out;
+    }
+
+    &.is-overlapping::before {
+      opacity: 1;
+    }
+  }
+
+  .menu-group__title-line {
+    position: relative;
+    z-index: 1;
+    gap: 10px;
+  }
+
+  .menu-group__title {
+    font-size: clamp(58px, 17vw, 86px);
+  }
+
+  .menu-group__quantity {
+    font-size: clamp(16px, 5vw, 24px);
+  }
+
+  .menu-group__items {
+    padding-top: 5vh;
+  }
+
+  .menu-group__overlap-sentinel {
+    display: block;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    pointer-events: none;
+  }
+
+  .menu-group__exit-sentinel {
+    display: block;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+  }
+
+  .menu-item {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+
+  .menu-item__header {
+    align-items: center;
+    column-gap: 8px;
+    row-gap: 7px;
+  }
+
+  .menu-item__name {
+    font-size: clamp(23px, 6.2vw, 31px);
+    line-height: 1.04;
+  }
+
+  .menu-item__badges {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+
+  .menu-item__badge {
+    min-height: 22px;
+    padding: 4px 7px 3px;
+    font-size: 9px;
+  }
+
+  .menu-item__description {
+    max-width: none;
+    font-size: clamp(15px, 4.25vw, 20px);
+    line-height: 1.22;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero {
+    height: 100svh;
+    min-height: 640px;
+  }
+
+  .hero__video {
+    object-position: 53% center;
+  }
+
+  .masthead {
+    top: 22px;
+    font-size: 8px;
+  }
+
+  .masthead__venue {
+    grid-column: 1 / span 3;
+  }
+
+  .masthead__brands {
+    grid-column: 4 / span 6;
+    gap: 12px;
+  }
+
+  .masthead__sushiclub {
+    width: 92px;
+  }
+
+  .masthead__anniversary {
+    width: 43px;
+  }
+
+  .masthead__reservation {
+    grid-column: 10 / span 3;
+  }
+
+  .title-lockup {
+    top: clamp(124px, 47vw, 170px);
+    width: calc(100% - 32px);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: auto auto auto;
+    row-gap: 7px;
+  }
+
+  .title-word {
+    font-size: 23.5vw;
+  }
+
+  .title-word--sushi {
+    grid-column: 1 / span 9;
+    grid-row: 1;
+  }
+
+  .title-kicker {
+    grid-column: 4 / span 9;
+    grid-row: 2;
+    align-self: auto;
+    justify-self: start;
+    margin: 0;
+    font-size: 4.55vw;
+  }
+
+  .title-word--libre {
+    grid-column: 3 / span 10;
+    grid-row: 3;
+    justify-self: end;
+  }
+
+  .hero-copy {
+    top: auto;
+    bottom: calc(var(--dock-height) + var(--dock-bottom) + 30px);
+    text-align: left;
+    width: 88vw;
+
+    h2 {
+      font-size: 13px;
+    }
+
+    p {
+      font-size: 9px;
+      line-height: 1.26;
+    }
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}

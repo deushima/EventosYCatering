@@ -1,0 +1,21 @@
+{
+  "name": "eventosycatering",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/dev.mjs",
+    "serve": "node scripts/serve.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.mjs",
+    "verify": "npm run typecheck && npm run clean && npm run build && npm test",
+    "ci": "npm run verify"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.5",
+    "sass": "^1.89.0",
+    "typescript": "^5.8.3"
+  }
+}

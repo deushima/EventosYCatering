@@ -1,0 +1,35 @@
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+
+  &[data-state="complete"] {
+    display: none;
+  }
+}
+
+.countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.025);
+  border-radius: 6px;
+  background: rgba(4, 4, 4, 0.76);
+
+  strong {
+    font-size: clamp(28px, 2.1vw, 40px);
+    font-weight: 600;
+    line-height: 0.86;
+    letter-spacing: -0.07em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  span {
+    margin-top: 9px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+  }
+}

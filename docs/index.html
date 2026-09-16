@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="SushiClub Catering: encuentros, eventos y celebraciones con una propuesta práctica, cuidada y lista para compartir."
+    />
+    <title>SushiClub Catering — Eventos SushiClub</title>
+    <script>
+      (() => {
+        if (location.protocol === "file:") {
+          const currentPath = decodeURIComponent(location.pathname).replace(/\\/g, "/");
+          const marker = "/src/static/index.html";
+          if (currentPath.endsWith(marker)) {
+            location.replace(currentPath.slice(0, -marker.length) + "/dist/index.html");
+            return;
+          }
+        }
+
+        const root = document.documentElement;
+        root.classList.add("has-menu-reveal");
+        root.classList.add("has-proposal-reveal");
+        window.setTimeout(() => {
+          if (!root.hasAttribute("data-menu-reveal-ready")) {
+            root.classList.add("menu-reveal-fallback");
+          }
+          if (!root.hasAttribute("data-proposal-reveal-ready")) {
+            root.classList.add("proposal-reveal-fallback");
+          }
+        }, 1800);
+      })();
+    </script>
+    <link
+      rel="preload"
+      href="fonts/Gazzetta Black.otf"
+      as="font"
+      type="font/otf"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="app.css?v=5b789e8854ea" />
+    <script src="app.js?v=5b789e8854ea" defer></script>
+  </head>
+  <body>
+    <main class="page">
+      <aside class="booking-dock" aria-label="Contacto para eventos y catering">
+        <div class="booking-dock__meta booking-dock__meta--location">
+          <span class="booking-dock__label">Servicio</span>
+          <strong>
+            <span class="booking-dock__value booking-dock__value--desktop">EVENTOS</span>
+            <span class="booking-dock__value booking-dock__value--mobile">EVENTOS</span>
+          </strong>
+        </div>
+
+        <div class="booking-dock__meta">
+          <span class="booking-dock__label">Catering</span>
+          <strong>
+            <span class="booking-dock__value booking-dock__value--desktop">A MEDIDA</span>
+            <span class="booking-dock__value booking-dock__value--mobile">A MEDIDA</span>
+          </strong>
+        </div>
+
+        <div class="booking-dock__meta booking-dock__meta--time">
+          <span class="booking-dock__label">Contacto</span>
+          <strong>+54 11 5481-5672</strong>
+        </div>
+
+        <div class="countdown event-dock-note" aria-label="Opciones de atención">
+          <div class="countdown__unit event-dock-note__item">
+            <strong>CELEBRACIONES</strong><span>FESTEJOS</span>
+          </div>
+          <div class="countdown__unit event-dock-note__item">
+            <strong>REUNIONES</strong><span>GRUPOS</span>
+          </div>
+          <div class="countdown__unit event-dock-note__item">
+            <strong>AFTER OFFICE</strong><span>EMPRESAS</span>
+          </div>
+        </div>
+
+        <a
+          class="booking-dock__cta"
+          data-booking-cta
+          href="https://wa.me/541154815672"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><span data-booking-cta-label>RESERVÁ<br />AHORA</span></a
+        >
+      </aside>
+
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__video-stack" aria-hidden="true">
+          <video
+            class="hero__video is-active"
+            data-intro-video
+            data-video-source="assets/bg_eventos.mp4"
+            autoplay
+            muted
+            playsinline
+            preload="metadata"
+          >
+            <source src="assets/bg_eventos.mp4" type="video/mp4" />
+          </video>
+          <video
+            class="hero__video"
+            data-loop-video
+            data-video-source="assets/bg_eventos.mp4"
+            muted
+            playsinline
+            preload="none"
+          ></video>
+          <video
+            class="hero__video"
+            data-loop-video
+            data-video-source="assets/bg_eventos.mp4"
+            muted
+            playsinline
+            preload="none"
+          ></video>
+        </div>
+        <div class="hero__black-filter" aria-hidden="true"></div>
+        <div class="hero__gradient" aria-hidden="true"></div>
+        <div class="hero__grain" aria-hidden="true"></div>
+
+        <header
+          class="masthead"
+          style="
+            left: 50%;
+            right: auto;
+            width: calc(100% - (2 * var(--page-x)));
+            transform: translateX(-50%);
+            grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+          "
+        >
+          <p
+            class="masthead__venue"
+            style="grid-column: 1; justify-self: start"
+          >
+            EVENTOS & CATERING
+          </p>
+          <a
+            class="masthead__brands"
+            href="https://www.sushiclub.com.ar/"
+            aria-label="Ir al sitio de SushiClub"
+            style="grid-column: 2; justify-self: center"
+          >
+            <img
+              class="masthead__sushiclub"
+              src="assets/sushiclub.svg"
+              width="234"
+              height="34"
+              alt="SushiClub"
+            />
+            <img
+              class="masthead__anniversary"
+              src="assets/anniversary-25.svg"
+              width="147"
+              height="113"
+              alt="25 Anniversary Edition"
+            />
+          </a>
+          <p
+            class="masthead__reservation"
+            style="grid-column: 3; justify-self: end"
+          >
+            CONSULTA<br />PERSONALIZADA
+          </p>
+        </header>
+
+        <div class="title-lockup" id="hero-title">
+          <h1 class="title-word title-word--sushi">TU ENCUENTRO</h1>
+          <p class="title-kicker">SUSHICLUB CATERING</p>
+          <p class="title-word title-word--libre">RESUELTO</p>
+        </div>
+
+        <div class="hero-copy">
+          <h2>TU EVENTO CON UNA PROPUESTA PRÁCTICA, CUIDADA Y LISTA PARA COMPARTIR</h2>
+          <p>
+            VOS ELEGÍS LA OCASIÓN, NOSOTROS RESOLVEMOS LA EXPERIENCIA.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="proposal"
+        id="propuesta"
+        data-proposal-root
+        aria-labelledby="proposal-heading"
+      >
+        <div class="proposal__shell">
+          <header class="proposal__header">
+            <h2
+              class="proposal-reveal proposal-reveal--heading"
+              data-proposal-reveal
+              style="--proposal-reveal-delay: 0ms"
+              id="proposal-heading"
+            >
+              SUSHICLUB CATERING
+            </h2>
+          </header>
+
+          <div class="proposal__content">
+            <p
+              class="proposal__intro proposal-reveal proposal-reveal--intro"
+              data-proposal-reveal
+              style="--proposal-reveal-delay: 70ms"
+            >
+              TU EVENTO CON UNA PROPUESTA PRÁCTICA, CUIDADA Y LISTA PARA COMPARTIR.
+              VOS ELEGÍS LA OCASIÓN, NOSOTROS RESOLVEMOS LA EXPERIENCIA.
+            </p>
+
+            <ul
+              class="proposal__chips proposal-reveal proposal-reveal--chips"
+              data-proposal-reveal
+              style="--proposal-reveal-delay: 120ms"
+              aria-label="Características del servicio"
+            >
+              <li>EVENTOS</li>
+              <li>CATERING</li>
+              <li>PROPUESTA A MEDIDA</li>
+            </ul>
+
+            <div class="proposal__conditions event-summary">
+              <article
+                class="proposal__condition proposal-reveal proposal-reveal--conditions"
+                data-proposal-reveal
+                style="--proposal-reveal-delay: 0ms"
+              >
+                <h3>CALIDAD</h3>
+                <p>
+                  UNA PROPUESTA GASTRONÓMICA CUIDADA PARA RESOLVER ENCUENTROS
+                  SOCIALES Y CORPORATIVOS.
+                </p>
+              </article>
+
+              <article
+                class="proposal__condition proposal-reveal proposal-reveal--conditions"
+                data-proposal-reveal
+                style="--proposal-reveal-delay: 70ms"
+              >
+                <h3>SERVICIO</h3>
+                <p>
+                  PRESENTACIÓN, VARIEDAD Y ACOMPAÑAMIENTO PROFESIONAL PARA QUE
+                  VOS TE OCUPES DE DISFRUTAR.
+                </p>
+              </article>
+            </div>
+
+            <p
+              class="proposal__legal proposal-reveal proposal-reveal--legal"
+              data-proposal-reveal
+            >
+              SOPORTE | TÉRMINOS Y CONDICIONES | +54 11 5481-5672 · AV. DEL
+              LIBERTADOR 6966, CABA
+            </p>
+          </div>
+        </div>
+      </section>
+
+          <section class="events-section" id="eventos" aria-labelledby="events-heading">
+      <div class="events-section__background" aria-hidden="true">
+        <video class="events-section__video" autoplay muted loop playsinline preload="metadata">
+          <source src="assets/bg_menu.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="events-section__shell">
+        <header class="events-section__intro menu-reveal menu-reveal--intro" data-menu-reveal>
+          <p class="events-section__eyebrow">Eventos & Catering</p>
+          <h2 id="events-heading">PARA CADA OCASIÓN ESPECIAL</h2>
+        </header>
+        <div class="events-section__occasions" aria-label="Tipos de ocasión">
+          <article class="events-card menu-reveal menu-reveal--item" data-menu-reveal style="--menu-reveal-delay:0ms">
+            <p class="events-card__number">01</p>
+            <h3>Celebraciones</h3>
+            <p>Hacé de tu festejo algo inolvidable.</p>
+          </article>
+          <article class="events-card menu-reveal menu-reveal--item" data-menu-reveal style="--menu-reveal-delay:45ms">
+            <p class="events-card__number">02</p>
+            <h3>Reuniones</h3>
+            <p>Disfrutá sin cocinar, nosotros resolvemos.</p>
+          </article>
+          <article class="events-card menu-reveal menu-reveal--item" data-menu-reveal style="--menu-reveal-delay:90ms">
+            <p class="events-card__number">03</p>
+            <h3>After Office</h3>
+            <p>El mejor cierre para tu día.</p>
+          </article>
+        </div>
+        <section class="events-product menu-reveal menu-reveal--group" data-menu-reveal aria-labelledby="events-product-title">
+          <div>
+            <p class="events-section__eyebrow">Pensado para compartir</p>
+            <h3 id="events-product-title">CALIDAD, VARIEDAD Y PRESENTACIÓN</h3>
+          </div>
+          <p>Para que vos te ocupes de disfrutar.</p>
+          <a class="events-product__action" href="https://wa.me/541154815672" target="_blank" rel="noopener noreferrer">CONSULTÁ AHORA</a>
+        </section>
+        <section class="events-institutional menu-reveal menu-reveal--item" data-menu-reveal aria-labelledby="events-brand-title">
+          <h3 id="events-brand-title">SUSHICLUB</h3>
+          <p>Marca gastronómica de cocina asiática innovadora, reconocida por su propuesta vanguardista, servicio profesional y expansión nacional e internacional.</p>
+          <p class="events-socials" aria-label="Redes sociales">WhatsApp · Instagram · Facebook · TikTok · LinkedIn</p>
+        </section>
+        <section class="events-final menu-reveal menu-reveal--item" data-menu-reveal aria-labelledby="events-final-title">
+          <p class="events-section__eyebrow">SUSHICLUB</p>
+          <h3 id="events-final-title">TU PRÓXIMO ENCUENTRO EMPIEZA ACÁ</h3>
+          <p>CONTACTANOS HOY</p>
+          <a class="events-final__action" href="https://wa.me/541154815672" target="_blank" rel="noopener noreferrer">CONSULTÁ AHORA</a>
+          <strong>+54 11 5481-5672</strong>
+        </section>
+        <footer class="events-footer">
+          <p>SOPORTE | TÉRMINOS Y CONDICIONES | +54 11 5481-5672</p>
+          <p>AV. DEL LIBERTADOR 6966, CABA</p>
+        </footer>
+      </div>
+    </section>
+    </main>
+  </body>
+</html>
