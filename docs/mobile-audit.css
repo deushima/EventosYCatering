@@ -1,0 +1,185 @@
+@media (max-width: 620px) {
+  :root {
+    --dock-height: 80px;
+  }
+
+  html,
+  body,
+  .page {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .masthead {
+    top: max(16px, env(safe-area-inset-top, 0px));
+    width: calc(100% - 28px) !important;
+    column-gap: 8px;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important;
+  }
+
+  .masthead__venue,
+  .masthead__reservation {
+    min-width: 0;
+    font-size: clamp(8px, 2.25vw, 10px) !important;
+    line-height: 0.92 !important;
+    letter-spacing: -0.04em !important;
+  }
+
+  .masthead__venue {
+    grid-column: 1 !important;
+    justify-self: start !important;
+    text-align: left;
+  }
+
+  .masthead__brands {
+    grid-column: 2 !important;
+    justify-self: center !important;
+    gap: 8px;
+  }
+
+  .masthead__sushiclub {
+    width: 82px;
+  }
+
+  .masthead__anniversary {
+    width: 36px;
+  }
+
+  .masthead__reservation {
+    grid-column: 3 !important;
+    justify-self: end !important;
+    text-align: right;
+  }
+
+  .title-lockup {
+    top: 44%;
+    left: 50%;
+    width: calc(100% - 24px);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .title-word--sushi::after {
+    content: "EVENTOS &\A CATERING";
+    font-size: clamp(48px, 14vw, 62px);
+    line-height: 0.84;
+    text-align: center;
+    white-space: pre-line;
+  }
+
+  .hero-copy {
+    left: 50%;
+    bottom: calc(var(--dock-height) + var(--dock-bottom) + 26px);
+    width: calc(100% - 36px);
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .hero-copy h2 {
+    font-size: clamp(11px, 3.2vw, 13px);
+    line-height: 1.08;
+  }
+
+  .hero-copy p {
+    font-size: clamp(9px, 2.5vw, 10px);
+    line-height: 1.28;
+  }
+
+  .booking-dock {
+    height: var(--dock-height) !important;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 0.8fr) minmax(0, 1.35fr) 88px !important;
+    grid-template-rows: 64px !important;
+    gap: 6px !important;
+    padding: 8px !important;
+  }
+
+  .event-dock-note {
+    display: none !important;
+  }
+
+  .booking-dock__meta {
+    min-width: 0;
+    width: 100% !important;
+    padding: 0 2px !important;
+    align-self: center;
+  }
+
+  .booking-dock__label {
+    margin-bottom: 4px;
+    font-size: 8px;
+  }
+
+  .booking-dock__meta strong,
+  .booking-dock__meta--time strong {
+    max-width: 100%;
+    overflow: visible;
+    font-size: clamp(9px, 2.55vw, 11px) !important;
+    line-height: 1.02;
+    white-space: normal;
+    text-overflow: clip;
+  }
+
+  .booking-dock__cta {
+    grid-column: 4 !important;
+    grid-row: 1 !important;
+    min-width: 0;
+    font-size: 11px;
+    line-height: 0.9;
+  }
+
+  .proposal__shell,
+  .events-section__shell {
+    width: calc(100% - 32px);
+  }
+
+  .proposal__header h2,
+  .proposal__intro,
+  .events-section__intro h2,
+  .events-product h3,
+  .events-institutional h3,
+  .events-final h3 {
+    max-width: 100%;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .proposal__header h2,
+  .events-section__intro h2,
+  .events-product h3,
+  .events-final h3 {
+    text-wrap: balance;
+  }
+
+  .events-section__intro h2 {
+    font-size: clamp(44px, 13.5vw, 58px);
+    line-height: 0.82;
+  }
+
+  .events-product h3 {
+    font-size: clamp(42px, 13vw, 56px);
+    line-height: 0.84;
+  }
+
+  .events-product > p {
+    max-width: 100%;
+    font-size: clamp(24px, 7.5vw, 32px);
+    line-height: 0.98;
+  }
+
+  .events-final h3 {
+    font-size: clamp(40px, 12.5vw, 54px);
+    line-height: 0.84;
+  }
+
+  .events-card,
+  .events-product,
+  .events-institutional,
+  .events-final,
+  .proposal__content {
+    min-width: 0;
+  }
+
+  .events-footer {
+    overflow-wrap: anywhere;
+  }
+}
