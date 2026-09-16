@@ -237,38 +237,34 @@
 }
 
 .masthead__brands {
-  display: none;
+  display: flex;
 }
 
 .masthead__venue {
-  font-size: 0;
-  line-height: 1;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .masthead__venue::after {
-  content: "TU ENCUENTRO\A RESUELTO";
-  display: block;
-  white-space: pre-line;
-  color: #fff;
-  font-size: clamp(17px, 1.35vw, 26px);
-  font-weight: 500;
-  line-height: 0.9;
-  letter-spacing: -0.055em;
+  content: none;
+  display: none;
 }
 
 .masthead__reservation {
-  font-size: clamp(17px, 1.35vw, 26px);
-  font-weight: 500;
-  line-height: 0.9;
-  letter-spacing: -0.055em;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
 }
 
 .title-lockup {
-  top: 48.5%;
+  top: 50%;
   left: 50%;
   right: auto;
-  display: block;
-  width: min(1500px, calc(100vw - 80px));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(1600px, calc(100vw - 80px));
   transform: translate(-50%, -50%);
   text-align: center;
   white-space: nowrap;
@@ -277,7 +273,15 @@
 .title-word--sushi {
   display: block;
   margin: 0;
-  font-size: 0;
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0;
+  text-shadow: none !important;
+}
+
+.title-word--sushi::before {
+  content: none !important;
+  display: none !important;
 }
 
 .title-word--sushi::after {
@@ -289,7 +293,9 @@
   font-weight: 800;
   line-height: 0.82;
   letter-spacing: normal;
+  text-align: center;
   text-transform: uppercase;
+  white-space: nowrap;
   text-shadow:
     0 0 3px rgba(255, 255, 255, 0.6),
     0 0 18px rgba(255, 255, 255, 0.16);
@@ -297,7 +303,7 @@
 
 .title-kicker,
 .title-word--libre {
-  display: none;
+  display: none !important;
 }
 
 .hero-copy {
@@ -305,20 +311,16 @@
 }
 
 @media (max-width: 720px) {
-  .masthead__venue::after,
-  .masthead__reservation {
-    font-size: clamp(12px, 3.4vw, 16px);
-  }
-
   .title-lockup {
-    top: 45%;
+    top: 46%;
     width: calc(100vw - 32px);
     white-space: normal;
   }
 
   .title-word--sushi::after {
-    font-size: clamp(58px, 16vw, 92px);
-    line-height: 0.84;
+    font-size: clamp(54px, 15vw, 88px);
+    line-height: 0.86;
+    white-space: normal;
   }
 
   .hero-copy {
